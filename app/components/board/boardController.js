@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('tictactoe')
-        .controller('BoardController', ['$scope', 'boardService', BoardController]);
+        .controller('BoardController', ['$scope', 'boardService', '$location', '$anchorScroll', BoardController]);
 
-    function BoardController($scope, boardService) {
+    function BoardController($scope, boardService, $location, $anchorScroll) {
 
         $scope.initializeBoard = function () {
             //Start messages
@@ -34,14 +34,24 @@
             $scope.freeItems = $scope.boardItems.length * $scope.boardItems[0].length;
         };
 
+        $scope.gotoBoard = function () {
+            // set the location.hash to the id of
+            // the board.
+            $location.hash('tictactoeBoard');
+            // call $anchorScroll()
+            $anchorScroll();
+        };
+
         //User starts playing
         $scope.userStarts = function () {
             $scope.currentPlayer = 'O';
+            $scope.gotoBoard();
         };
 
         //Computer starts playing
         $scope.computerStarts = function () {
             $scope.currentPlayer = 'X';
+            $scope.gotoBoard();
             $scope.computerPlay();
         };
 

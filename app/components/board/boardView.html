@@ -16,7 +16,7 @@
     <div class="row tictactoe__board__div">
         <div class="col-md-4">
         </div>
-        <div class="col-md-4 tictactoe__board">
+        <div id="tictactoeBoard" class="col-md-4 tictactoe__board">
             <div ng-repeat="rowItems in boardItems">
                 <div class="tictactoe__board__row" ng-class="{'row' : ($index % 3 == 0)}">
                     <button ng-disabled="currentPlayer == '-' || winner" ng-repeat="item in rowItems " ng-class="{
