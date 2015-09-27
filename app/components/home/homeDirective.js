@@ -7,16 +7,14 @@
             controller: "HomeController",
             link: function ($scope, element, attrs) {
                 $scope.element = element;
-                var handler = function () {
-                    if ($scope.window.scrollY > 50) {
-                        angular.element($('nav')).addClass('navbar-shrink');
+                angular.element($scope.window).bind("scroll", function () {
+                    if (this.pageYOffset >= 50) {
+                        $scope.navBarShrink = true;
                     } else {
-                        angular.element($('nav')).removeClass('navbar-shrink');
+                        $scope.navBarShrink = false;
                     }
-                };
-                angular.element($($scope.window)).on('scroll', $scope.$apply.bind($scope, handler));
-                handler();
-
+                    $scope.$apply();
+                });
             }
         };
     }]);
