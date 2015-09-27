@@ -8,6 +8,7 @@
 
                     //Check first diagonal
                     if (board[0][0].value != "-" && board[0][0].value == board[1][1].value && board[1][1].value == board[2][2].value) {
+                        //winningItem is set to true in order to show green image
                         board[0][0].winningItem = true;
                         board[1][1].winningItem = true;
                         board[2][2].winningItem = true;
@@ -16,7 +17,7 @@
                     }
                     //Check second diagonal
                     else if (board[2][0].value != "-" && board[2][0].value == board[1][1].value && board[1][1].value == board[0][2].value) {
-
+                        //winningItem is set to true in order to show green image
                         board[2][0].winningItem = true;
                         board[1][1].winningItem = true;
                         board[0][2].winningItem = true;
@@ -25,12 +26,14 @@
                     } else { //check rows and columns
                         for (var i = 0; i < board.length; i++) {
                             if (board[i][0].value != "-" && board[i][0].value == board[i][1].value && board[i][1].value == board[i][2].value) {
+                                //winningItem is set to true in order to show green image
                                 board[i][0].winningItem = true;
                                 board[i][1].winningItem = true;
                                 board[i][2].winningItem = true;
 
                                 return board[i][0].value;
                             } else if (board[0][i].value != "-" && board[0][i].value == board[1][i].value && board[1][i].value == board[2][i].value) {
+                                //winningItem is set to true in order to show green image
                                 board[0][i].winningItem = true;
                                 board[1][i].winningItem = true;
                                 board[2][i].winningItem = true;
@@ -51,7 +54,8 @@
 
                     if (freeItems === 0) return false;
 
-                    //Dumb algorithm
+                    //Clumsy algorithm
+                    //TODO: implement minimax algorithm
                     //Find the next available item in the board randomly
                     var foundNext = false;
                     while (!foundNext) {
