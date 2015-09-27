@@ -1,19 +1,20 @@
 {
-    "name": "camila.riveron.tictactoe",
-    "version": "0.0.0",
-    "dependencies": {
-        "bower": "1.4.1",
-        "grunt": "~0.4.5",
-        "matchdep": "~0.3.0",
-        "grunt-express": "~1.2.1",
-        "grunt-contrib-watch": "~0.6.0",
-        "grunt-open": "~0.2.3"
-    },
-    "engines": {
-        "node": "4.1.1"
-    },
-    "scripts": {
-        "postinstall": "bower install",
-        "start": "grunt server"
-    }
+  "name": "camila.riveron.tictactoe",
+  "version": "0.0.0",
+  "dependencies": {
+    "bower": "1.4.1",
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-express": "1.2.1",
+    "grunt-open": "0.2.3",
+    "matchdep": "~0.3.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "grunt server"
+  }
 }
