@@ -2,9 +2,7 @@
     "name": "camila.riveron.tictactoe",
     "version": "0.0.0",
     "dependencies": {
-        "bower": "1.4.1"
-    },
-    "devDependencies": {
+        "bower": "1.4.1",
         "grunt": "~0.4.5",
         "matchdep": "~0.3.0",
         "grunt-express": "~1.2.1",
