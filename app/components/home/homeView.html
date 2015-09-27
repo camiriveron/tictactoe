@@ -1,0 +1,53 @@
+<div class="homeDirective">
+    <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TIC TAC TOE</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#play">Play!</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome!</div>
+                <div class="intro-heading">Let's play Tic Tac Toe</div>
+                <a href="#play" class="btn tictactoe__button btn-lg">Play!</a>
+            </div>
+        </div>
+    </header>
+    <!-- Play Section -->
+    <section id="play" class="tictactoe__board__section">
+        <div class="container tictactoe__container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Can you win?</h2>
+                    <h3 class="section-subheading text-muted">Tic Tac Toe is a simple game using a small 3X3 graph of empty boxes. Players alternate turns by placing a single 'X' or 'O' into an empty box. The first player to get 3 X's or O's lined up horizontally, vertically, or diagonally, wins
+                        the game. If each player is smart enough the game will always end in a draw, otherwise known as a "cat's-tail".</h3>
+                </div>
+            </div>
+            <div ng-include="'../components/board/boardView.html'"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <footer>
+                    <p>© Camila Riverón 2015</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+</div>

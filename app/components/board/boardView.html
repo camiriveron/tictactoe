@@ -1,0 +1,39 @@
+<div ng-controller="BoardController">
+    <div class="row tictactoe__buttonbar">
+        <div class="col-md-4">
+            <button class="tictactoe__computer btn-lg" ng-click="(currentPlayer != '-') || computerStarts()"></button>
+            <h3 class="tictactoe__computer__text">{{computerMessage}}</h3>
+        </div>
+        <div class="col-md-4">
+            <h3 ng-show="currentPlayer == '-'">{{startMessage}}</h3>
+            <a ng-show="currentPlayer != '-'" href="" class="btn tictactoe__button btn-lg " ng-click="initializeBoard()">Play again!</a>
+        </div>
+        <div class="col-md-4 ">
+            <button class="tictactoe__user btn-lg" ng-click="(currentPlayer != '-') || userStarts()"></button>
+            <h3 class="tictactoe__user__text">{{userMessage}}</h3>
+        </div>
+    </div>
+    <div class="row tictactoe__board__div">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 tictactoe__board">
+            <div ng-repeat="rowItems in boardItems">
+                <div class="tictactoe__board__row" ng-class="{'row' : ($index % 3 == 0)}">
+                    <button ng-disabled="currentPlayer == '-' || winner" ng-repeat="item in rowItems " ng-class="{
+                    'tictactoe__item__X': ( item.value == 'X'),
+                    'tictactoe__item__X--winning': ( item.value == 'X' && item.winningItem),
+                    'tictactoe__item__O': ( item.value == 'O'),
+                    'tictactoe__item__O--winning': ( item.value == 'O' && item.winningItem),
+                    'tictactoe__item--hover': (currentPlayer == 'O' && item.value == '-' && !winner),
+                    'tictactoe__item--right':$first,
+                    'tictactoe__item--left':$last,
+                    'tictactoe__item--bottom': $parent.$first,
+                    'tictactoe__item--top': $parent.$last}" class="tictactoe__item btn-lg " ng-click="
+                    (item.value != '-') || checkItem($parent.$index, $index)"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 ">
+        </div>
+    </div>
+</div>

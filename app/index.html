@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tic tac toe</title>
+
+    <script src="assets/libs/bower_components/angular/angular.js"></script>
+    <script src="assets/libs/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Modules -->
+    <script src="app.module.js"></script>
+    <!-- Controllers -->
+    <script src="components/home/homeController.js"></script>
+    <script src="components/board/boardController.js"></script>
+    <!-- Directives -->
+    <script src="components/home/homeDirective.js"></script>
+    <!-- Services -->
+    <script src="components/board/boardService.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/libs/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/tictactoe.css" />
+</head>
+
+<body>
+    <div ng-app="tictactoe" ng-include="'components/home/homeView.html'"></div>
+</body>
+
+</html>
