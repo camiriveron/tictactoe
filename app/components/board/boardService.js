@@ -5,6 +5,7 @@
         .factory('boardService', function () {
             return {
                 checkEndOfGame: function (board, freeItems) {
+
                     //Check first diagonal
                     if (board[0][0].value != "-" && board[0][0].value == board[1][1].value && board[1][1].value == board[2][2].value) {
                         board[0][0].winningItem = true;
@@ -46,19 +47,22 @@
                     //at least one empty item then the game is not finished
                     return false;
                 },
-                getNextMove: function (board) {
+                getNextMove: function (board, freeItems) {
+
+                    if (freeItems === 0) return false;
+
                     //Dumb algorithm
-                    //Find the next available item in the board
+                    //Find the next available item in the board randomly
                     var foundNext = false;
-                    var wantedColumn = 0;
-                    for (var i = 0; i < board.length; i++) {
-                        for (var j = 0; j < board[i].length; j++) {
-                            if (board[i][j].value == "-") {
-                                return {
-                                    row: i,
-                                    column: j
-                                };
-                            }
+                    while (!foundNext) {
+                        var randomRow = Math.floor(Math.random() * 3);
+                        var randomColumn = Math.floor(Math.random() * 3);
+                        if (board[randomRow][randomColumn].value == "-") {
+                            foundNext = true;
+                            return {
+                                row: randomRow,
+                                column: randomColumn
+                            };
                         }
                     }
 
