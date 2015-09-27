@@ -4,7 +4,6 @@
     "private": true,
     "dependencies": {
         "angular": "1.3.16",
-        "jquery-ui": "1.11.3",
-        "angular-bootstrap-tour": "git://github.com/benmarch/angular-bootstrap-tour.git"
+        "bootstrap": "3.3.5"
     }
 }
