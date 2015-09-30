@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('tictactoe')
-        .service('boardService', function () {
+        .factory('boardService', function () {
             return {
                 checkEndOfGame: function (board, freeItems) {
 
